@@ -1,39 +1,24 @@
 <?php
-// example file saved from OSPy plugin
-$cas = "11.08.2016 (15:30:16)";
+// example: save file from FTP plugin from OSPy
+$cas = "11.08.2016 (14:23:21)";
 $rain = '1';
 $output = '9';
 $program = '3';
-$name0 = 'cerpadlo';
-$state0 = '0';
-$name1 = 'boruvky';
-$state1 = '0';
-$name2 = 'rybiz';
-$state2 = '0';
-$name3 = 'ruze';
-$state3 = '0';
-$name4 = 'vchod';
-$state4 = '0';
-$name5 = 'thuje';
-$state5 = '0';
-$name6 = 'zahony';
-$state6 = '0';
-$name7 = 'ventilator';
-$state7 = '0';
-$name8 = 'vyvod hadice';
-$state8 = '0';
+$name = array("cerpadlo", "boruvky, maliny", "lavicka, rybiz", "ruze, vino, jalovec", "vchod, jahody", "thuje nahore", "zahony", "ventilator", "vyvod hadice");
+$state = array("0", "0", "0", "0", "0", "0", "0", "0", "0");
+$progname = array("V 5 hodin na 10 minut", "V 5 hodin na 5 minut", "Ve 12 hodin na 30 minut");
 $schedul = '1';
-$system = '1';
-$cpu = '40.6';
+$system = '0';
+$cpu = '40.1';
 $unit = 'C';
 $ver = '2016-07-30';
-$id = 'Zalevac venku';
+$id = 'Zalevac';
 $ip = '192.168.1.253';
 $port = '8080';
 $ssl = '1';
 $tank = '';
 $press = '1';
 $ups = '0';
-$lastrun = '10-08-2016 v 05:30:03 program:  V 5 hodin na 10 minut';
-$up = '6 days, 6:43:41';
+$lastrun = '10-08-2016 v 17:31:52 program: Ve 12 hodin na 30 minut (Run-Now)';
+$up = '7 days, 3:36:46';
 ?>
