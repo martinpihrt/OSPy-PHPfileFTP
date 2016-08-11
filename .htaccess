@@ -1,0 +1,6 @@
+AuthUserFile /data/web/virtuals/xxx/virtual/www/ovladani/.htpasswd
+AuthGroupFile /dev/null
+AuthName "OSPy kontroler - admin"
+AuthType Basic
+Require valid-user
+Order deny,allow
