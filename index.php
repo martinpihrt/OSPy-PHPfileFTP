@@ -5,11 +5,11 @@ if(isset($_POST['tlacitko']))
   {
     $akce = $_POST['tlacitko'];  
   
-    for( $i= 1 ; $i <= $output ; $i++ ){         // station xx ON
+    for( $i=0 ; $i <= $output ; $i++ ){          // station xx ON
       if ($akce == "Z$i") { $prikaz = "Z$i"; }
       }
 
-    for( $i= 1 ; $i <= $output ; $i++ ){         // station xx OFF
+    for( $i=0 ; $i <= $output ; $i++ ){          // station xx OFF
       if ($akce == "V$i") { $prikaz = "V$i"; }
       }
 
@@ -75,7 +75,7 @@ if(isset($_POST['tlacitko']))
         echo "<br><b>D&eacute;&#353;&#357;ov&eacute; &#269;idlo: </b>";  if ($rain=='1'){ echo ("<font color='Red'>pr&#353;&iacute;</font><br>"); } else { echo ("<font color='Green'>bez de&#353;t&#283;</font><br>"); }
         if ($lastrun!=""){
           echo "<br><b>Naposledy b&#283;&#382;el:</b> " . $lastrun . "<br><br>"; } else { echo "<br><br>"; }
-        if ($system=='0'){ echo ("<button name=\"tlacitko\" value=\"stop\"><h3><font color='Red'>Zastavit syst&eacute;m</font></h3></button>"); }  else { echo ("<button name=\"tlacitko\" value=\"start\"><h3>Spustit syst&eacute;m</h3></button>"); }   
+        if ($system=='0'){ echo ("<button name=\"tlacitko\" value=\"stop\"><h3><font color='Green'>Zastavit syst&eacute;m</font></h3></button>"); }  else { echo ("<button name=\"tlacitko\" value=\"start\"><h3><font color='Red'>Spustit syst&eacute;m</font></h3></button>"); }   
   
         echo "<b>&nbsp; Syst&eacute;m:</b> ";  if ($system=='0'){ echo ("povolen"); } else { echo ("zastaven"); }
         echo "&nbsp;";
@@ -91,20 +91,20 @@ if(isset($_POST['tlacitko']))
 </legend>
    <?php
    for( $i= 1 ; $i <= $program ; $i++ ){
-     echo "<button name=\"tlacitko\" value=\"P$i\"><h3>Spustit program " . $i .  "</h3></button>";
+     echo "<button name=\"tlacitko\" value=\"P$i\"><h3><font color='Blue'>Spustit program " . $i .  "</font></h3></button>";
      echo "&nbsp;<b>N&aacute;zev:</b> " . $progname[$i-1] . "<br>"; } 
    ?>
 </fieldset>
 
 <?php
-  for( $i= 1 ; $i <= $output ; $i++ ){
+  for( $i=0 ; $i < $output ; $i++ ){
     echo "<fieldset><legend>";
-    echo "<h2>Stanice: " . $name[$i-1] . "</h2>"; 
+    echo "<h2>Stanice: " . $name[$i] . "</h2>"; 
     echo "</legend>";
-    if ($state[$i-1]=='1'){ echo ("<button name=\"tlacitko\" value=\"V$i\"><h3>Vypnout</h3></button>"); } else { echo ("<button name=\"tlacitko\" value=\"Z$i\"><h3>Zapnout</h3></button>"); }  
-    echo "&nbsp;<b>Stav:</b> "; if ($state[$i-1]=='1') { echo ("ZAPNUTO"); } else { echo ("VYPNUTO"); } 
+    if ($state[$i]=='1'){ echo ("<button name=\"tlacitko\" value=\"V$i\"><h3>Vypnout</h3></button>"); } else { echo ("<button name=\"tlacitko\" value=\"Z$i\"><h3>Zapnout</h3></button>"); }  
+    echo "&nbsp;<b>Stav:</b> "; if ($state[$i]=='1') { echo ("<font color='Green'><b>ZAPNUTO</b></font>"); } else { echo ("<font color='Red'>VYPNUTO</font>"); } 
     if ($masterstat!=''){
-      if ($masterstat==$i-1){ echo "&nbsp;<font color='Gray'>(hlavn&iacute; stanice)</font>";} 
+      if ($masterstat==$i){ echo "&nbsp;<font color='Gray'>(hlavn&iacute; stanice)</font>";} 
       }
     echo "</fieldset>";
     }
