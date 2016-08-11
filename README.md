@@ -7,7 +7,7 @@ This PHP (tested in PHP7) files is support files for OSPy plugin: [Remote_FTP_Co
 * On the WEB server use .htaccess and .htpasswd files for secured login for your OSPy control.  
 
 <b>Index preview</b>  
-<img src="OSPy-PHPfileFTP/index preview.png" width="100%">
+<img src="index preview.png" width="100%">
 
 # License  
 ----------------------------
